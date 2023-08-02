@@ -2,9 +2,12 @@ import { styled } from 'styled-components';
 
 type ContainerProps = {
   $type?: 'primary' | 'secondary' | 'ghost';
+  $fillContainer?: boolean;
 };
 
 export const Container = styled.button<ContainerProps>`
+  width: ${props => (props.$fillContainer ? '100%' : 'auto')};
+
   background: ${props =>
     props.$type === 'primary'
       ? props.theme.colors.blue[500]

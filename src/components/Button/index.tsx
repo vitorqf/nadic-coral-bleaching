@@ -5,6 +5,7 @@ type ButtonProps = {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   text: string;
+  fillContainer?: boolean;
 };
 
 export function Button({
@@ -12,9 +13,10 @@ export function Button({
   leftIcon,
   rightIcon,
   text = 'button',
+  fillContainer = false,
 }: ButtonProps) {
   return (
-    <Container $type={type}>
+    <Container $type={type} $fillContainer={fillContainer}>
       {leftIcon}
       {text}
       {rightIcon}
