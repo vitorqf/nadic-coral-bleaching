@@ -1,11 +1,16 @@
 import { Navigator, NavigatorItem, StyledContainer, Wrapper } from './styles';
 
-export function Header() {
+interface HeaderProps {
+  showOnlyLogo?: boolean;
+  center?: boolean;
+}
+
+export function Header({ showOnlyLogo = false, center = false }: HeaderProps) {
   return (
     <Wrapper>
-      <StyledContainer>
+      <StyledContainer $center={center}>
         <div>Logo</div>
-        <Navigator>
+        <Navigator $hidden={showOnlyLogo}>
           <ul>
             <NavigatorItem href='#'>Meus artigos</NavigatorItem>
             <NavigatorItem href='#'>Publicar artigo</NavigatorItem>

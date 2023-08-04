@@ -105,7 +105,13 @@ export function SignUpForm() {
               )
             }
           />
-          <Button text='Concluir' fillContainer type='submit' />
+          <Button
+            text='Concluir'
+            fillContainer
+            type='submit'
+            disabled={isSubmitting}
+            isLoading={isSubmitting}
+          />
         </StyledForm>
       )}
     </Formik>

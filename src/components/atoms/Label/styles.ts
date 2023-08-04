@@ -7,4 +7,8 @@ export const StyledLabel = styled.label`
   line-height: normal;
   letter-spacing: 0.25px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;

@@ -1,3 +1,4 @@
+import { Container } from '@/styles/defaults';
 import Link from 'next/link';
 import { styled } from 'styled-components';
 
@@ -7,15 +8,22 @@ export const StyledFooter = styled.footer`
   justify-content: center;
   height: 48px;
   background-color: ${({ theme }) => theme.colors.zinc[900]};
+
+  @media (max-width: 768px) {
+    height: 64px;
+  }
 `;
 
-export const Container = styled.div`
-  display: flex;
-  max-width: 1040px;
-  width: 100%;
+export const StyledContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
+
+  @media (max-width: 800px) {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+  }
 `;
 
 export const Copyright = styled.span`

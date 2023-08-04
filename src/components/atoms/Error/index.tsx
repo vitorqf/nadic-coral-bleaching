@@ -8,6 +8,10 @@ const Message = styled.p`
   line-height: normal;
   letter-spacing: 0.25px;
   align-self: flex-start;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 export function Error({ message }: { message: string }) {

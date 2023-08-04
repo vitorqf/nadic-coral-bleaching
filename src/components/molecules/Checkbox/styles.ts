@@ -11,12 +11,12 @@ export const Wrapper = styled.div`
 export const StyledRoot = styled(RadixCheckbox.Root)`
   all: unset;
   background-color: ${props => props.theme.colors.zinc[800]};
-  width: 25px;
-  height: 25px;
+  width: 26px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
 
   &:hover {

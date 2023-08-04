@@ -1,8 +1,8 @@
-import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
-import { Footer } from '@/components/organisms/Footer';
-import { Participating } from '@/components/molecules/Participating';
 import { SEO } from '@/components/SEO';
+import { Participating } from '@/components/molecules/Participating';
+import { Footer } from '@/components/organisms/Footer';
 import { SignUpForm } from '@/components/organisms/SignUpForm';
+import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
 import {
   Description,
   DetailedInfo,
@@ -17,7 +17,10 @@ import {
 export default function Home() {
   return (
     <>
-      <SEO title='Home' description='Home page' />
+      <SEO
+        title='Branqueamento de Corais'
+        description='Descubra os impactos devastadores do branqueamento de corais e saiba como você pode fazer a diferença. Participe do nosso evento e ajude a preservar os recifes de coral, um tesouro marinho em perigo.'
+      />
       <Wrapper>
         <StyledContainer>
           <LeftColumn>
