@@ -1,25 +1,26 @@
 import { Container } from './styles';
+import { Icon } from '@phosphor-icons/react';
 
 type ButtonProps = {
   type?: 'primary' | 'secondary' | 'ghost';
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  LeftIcon?: Icon;
+  RightIcon?: Icon;
   text: string;
   fillContainer?: boolean;
 };
 
 export function Button({
   type = 'primary',
-  leftIcon,
-  rightIcon,
+  LeftIcon,
+  RightIcon,
   text = 'button',
   fillContainer = false,
 }: ButtonProps) {
   return (
     <Container $type={type} $fillContainer={fillContainer}>
-      {leftIcon}
+      {LeftIcon && <LeftIcon size={16} color='#fff' weight='bold' />}
       {text}
-      {rightIcon}
+      {RightIcon && <RightIcon size={16} color='#fff' weight='bold' />}
     </Container>
   );
 }

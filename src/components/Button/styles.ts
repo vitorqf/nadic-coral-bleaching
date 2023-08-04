@@ -32,4 +32,34 @@ export const Container = styled.button<ContainerProps>`
   justify-content: center;
   gap: 8px;
   flex-shrink: 0;
+
+  cursor: pointer;
+
+  &:hover {
+    background: ${props =>
+      props.$type === 'primary'
+        ? props.theme.colors.blue[600]
+        : props.$type === 'secondary'
+        ? props.theme.colors.zinc[600]
+        : 'transparent'};
+  }
+
+  &:active {
+    background: ${props =>
+      props.$type === 'primary'
+        ? props.theme.colors.blue[700]
+        : props.$type === 'secondary'
+        ? props.theme.colors.zinc[500]
+        : 'transparent'};
+  }
+
+  &:disabled {
+    background: ${props =>
+      props.$type === 'primary'
+        ? props.theme.colors.zinc[700]
+        : props.$type === 'secondary'
+        ? props.theme.colors.zinc[700]
+        : 'transparent'};
+    cursor: not-allowed;
+  }
 `;

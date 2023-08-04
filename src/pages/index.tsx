@@ -1,13 +1,23 @@
-import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
+import { Button } from '@/components/Button';
+import { Checkbox } from '@/components/Checkbox';
 import { Container } from '@/styles/defaults';
 import { Participating } from '@/components/Participating';
 import { SEO } from '@/components/SEO';
+import { StyledContainer } from '@/components/Header/styles';
+import {
+  Calendar,
+  Check,
+  Clock,
+  MapPin,
+  UsersThree,
+} from '@phosphor-icons/react';
 import {
   Description,
   DetailedInfo,
   DetailedInfoItem,
   LeftColumn,
   NumbersContainer,
+  RightColumn,
   Title,
   Wrapper,
 } from './styles';
@@ -17,7 +27,7 @@ export default function Home() {
     <>
       <SEO title='Home' description='Home page' />
       <Wrapper>
-        <Container>
+        <StyledContainer>
           <LeftColumn>
             <Title>
               COMBATA: <span>Branqueamento de Corais</span>
@@ -58,7 +68,14 @@ export default function Home() {
               <Participating number='+343.432' title='pessoas inscritas' />
             </NumbersContainer>
           </LeftColumn>
-        </Container>
+
+          <RightColumn>
+            <Checkbox
+              label='Concordo em receber notificações no e-mail sobre o evento.'
+              id='notificationsAgreement'
+            />
+          </RightColumn>
+        </StyledContainer>
       </Wrapper>
     </>
   );

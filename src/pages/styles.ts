@@ -1,3 +1,4 @@
+import { Container } from '@/styles/defaults';
 import { styled } from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -12,6 +13,11 @@ export const Wrapper = styled.div`
   background-repeat: no-repeat;
 `;
 
+export const StyledContainer = styled(Container)`
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const LeftColumn = styled.div`
   max-width: 464px;
   display: flex;
@@ -19,6 +25,18 @@ export const LeftColumn = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
+`;
+
+export const RightColumn = styled.div`
+  display: flex;
+  width: 464px;
+  padding: 24px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  background-color: ${props => props.theme.colors.zinc[900]};
 `;
 
 export const Title = styled.h1`
