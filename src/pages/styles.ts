@@ -14,12 +14,12 @@ export const Wrapper = styled.div`
 `;
 
 export const StyledContainer = styled(Container)`
+  gap: 16px;
   align-items: center;
-  justify-content: space-between;
 `;
 
 export const LeftColumn = styled.div`
-  max-width: 464px;
+  flex: 1 0 484px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,8 +46,6 @@ export const Title = styled.h1`
 `;
 
 export const Description = styled.p`
-  align-self: stretch;
-
   color: ${props => props.theme.colors.white};
   font-size: 14px;
   font-style: normal;

@@ -1,14 +1,15 @@
 import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
-import { Participating } from '@/components/Participating';
+import { Footer } from '@/components/organisms/Footer';
+import { Participating } from '@/components/molecules/Participating';
 import { SEO } from '@/components/SEO';
-import { SignUpForm } from '@/components/SignUpForm';
-import { StyledContainer } from '@/components/Header/styles';
+import { SignUpForm } from '@/components/organisms/SignUpForm';
 import {
   Description,
   DetailedInfo,
   DetailedInfoItem,
   LeftColumn,
   NumbersContainer,
+  StyledContainer,
   Title,
   Wrapper,
 } from './styles';
@@ -63,6 +64,7 @@ export default function Home() {
           <SignUpForm />
         </StyledContainer>
       </Wrapper>
+      <Footer />
     </>
   );
 }

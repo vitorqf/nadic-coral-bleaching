@@ -1,11 +1,11 @@
-import { Button } from '../Button';
-import { Checkbox } from '../Checkbox';
-import { Error } from '../Error';
+import { Button } from '@/components/atoms/Button';
+import { Error } from '@/components/atoms/Error';
+import { H5 } from '@/components/atoms/Headings/h5';
+import { Checkbox } from '@/components/molecules/Checkbox';
+import { Input } from '@/components/molecules/Input';
 import { Field, Formik } from 'formik';
-import { H5 } from '../Headings/h5';
-import { Input } from '../Input';
-import { StyledForm } from './styles';
 import { ValidationSchema } from './form-validation-schema';
+import { StyledForm } from './styles';
 
 type SignUpFormData = {
   fullname: string;

@@ -1,7 +1,6 @@
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { Check } from '@phosphor-icons/react';
-import { FieldProps } from 'formik';
-import { Label } from '../Label';
+import { Label } from '@/components/atoms/Label';
 import { StyledRoot, Wrapper } from './styles';
 
 interface CheckboxProps {

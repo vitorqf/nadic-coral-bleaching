@@ -1,4 +1,4 @@
-import { Label } from '../Label';
+import { Label } from '../../atoms/Label';
 import { StyledInput, Wrapper } from './styles';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
