@@ -27,11 +27,3 @@ export const StyledRoot = styled(RadixCheckbox.Root)`
     box-shadow: 0 0 0 2px ${props => props.theme.colors.blue[500]};
   }
 `;
-
-export const Label = styled.label`
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.25px;
-`;

@@ -1,23 +1,14 @@
-import { Button } from '@/components/Button';
-import { Checkbox } from '@/components/Checkbox';
-import { Container } from '@/styles/defaults';
+import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
 import { Participating } from '@/components/Participating';
 import { SEO } from '@/components/SEO';
+import { SignUpForm } from '@/components/SignUpForm';
 import { StyledContainer } from '@/components/Header/styles';
-import {
-  Calendar,
-  Check,
-  Clock,
-  MapPin,
-  UsersThree,
-} from '@phosphor-icons/react';
 import {
   Description,
   DetailedInfo,
   DetailedInfoItem,
   LeftColumn,
   NumbersContainer,
-  RightColumn,
   Title,
   Wrapper,
 } from './styles';
@@ -69,12 +60,7 @@ export default function Home() {
             </NumbersContainer>
           </LeftColumn>
 
-          <RightColumn>
-            <Checkbox
-              label='Concordo em receber notificações no e-mail sobre o evento.'
-              id='notificationsAgreement'
-            />
-          </RightColumn>
+          <SignUpForm />
         </StyledContainer>
       </Wrapper>
     </>

@@ -1,23 +1,24 @@
 import { Container } from './styles';
 import { Icon } from '@phosphor-icons/react';
 
-type ButtonProps = {
-  type?: 'primary' | 'secondary' | 'ghost';
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'ghost';
   LeftIcon?: Icon;
   RightIcon?: Icon;
   text: string;
   fillContainer?: boolean;
-};
+}
 
 export function Button({
-  type = 'primary',
+  variant = 'primary',
   LeftIcon,
   RightIcon,
   text = 'button',
   fillContainer = false,
+  ...rest
 }: ButtonProps) {
   return (
-    <Container $type={type} $fillContainer={fillContainer}>
+    <Container $variant={variant} $fillContainer={fillContainer} {...rest}>
       {LeftIcon && <LeftIcon size={16} color='#fff' weight='bold' />}
       {text}
       {RightIcon && <RightIcon size={16} color='#fff' weight='bold' />}

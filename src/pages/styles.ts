@@ -27,18 +27,6 @@ export const LeftColumn = styled.div`
   gap: 16px;
 `;
 
-export const RightColumn = styled.div`
-  display: flex;
-  width: 464px;
-  padding: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  border-radius: 16px;
-  background-color: ${props => props.theme.colors.zinc[900]};
-`;
-
 export const Title = styled.h1`
   color: ${props => props.theme.colors.blue[500]};
   font-size: 59px;

@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 type ContainerProps = {
-  $type?: 'primary' | 'secondary' | 'ghost';
+  $variant?: 'primary' | 'secondary' | 'ghost';
   $fillContainer?: boolean;
 };
 
@@ -9,9 +9,9 @@ export const Container = styled.button<ContainerProps>`
   width: ${props => (props.$fillContainer ? '100%' : 'auto')};
 
   background: ${props =>
-    props.$type === 'primary'
+    props.$variant === 'primary'
       ? props.theme.colors.blue[500]
-      : props.$type === 'secondary'
+      : props.$variant === 'secondary'
       ? props.theme.colors.zinc[700]
       : 'transparent'};
   color: white;
@@ -37,27 +37,27 @@ export const Container = styled.button<ContainerProps>`
 
   &:hover {
     background: ${props =>
-      props.$type === 'primary'
+      props.$variant === 'primary'
         ? props.theme.colors.blue[600]
-        : props.$type === 'secondary'
+        : props.$variant === 'secondary'
         ? props.theme.colors.zinc[600]
         : 'transparent'};
   }
 
   &:active {
     background: ${props =>
-      props.$type === 'primary'
+      props.$variant === 'primary'
         ? props.theme.colors.blue[700]
-        : props.$type === 'secondary'
+        : props.$variant === 'secondary'
         ? props.theme.colors.zinc[500]
         : 'transparent'};
   }
 
   &:disabled {
     background: ${props =>
-      props.$type === 'primary'
+      props.$variant === 'primary'
         ? props.theme.colors.zinc[700]
-        : props.$type === 'secondary'
+        : props.$variant === 'secondary'
         ? props.theme.colors.zinc[700]
         : 'transparent'};
     cursor: not-allowed;
