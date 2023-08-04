@@ -1,17 +1,19 @@
 import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { Check } from '@phosphor-icons/react';
+import { FieldProps } from 'formik';
 import { Label } from '../Label';
 import { StyledRoot, Wrapper } from './styles';
 
-type CheckboxProps = {
+interface CheckboxProps {
   label: string;
   id: string;
-};
+  onCheckedChange?: (checked: boolean) => void;
+}
 
-export function Checkbox({ label, id }: CheckboxProps) {
+export function Checkbox({ label, id, onCheckedChange }: CheckboxProps) {
   return (
-    <Wrapper style={{ display: 'flex', alignItems: 'center' }}>
-      <StyledRoot defaultChecked id={id}>
+    <Wrapper>
+      <StyledRoot defaultChecked id={id} onCheckedChange={onCheckedChange}>
         <RadixCheckbox.Indicator>
           <Check size={16} color='#3B6AE1' weight='bold' />
         </RadixCheckbox.Indicator>
