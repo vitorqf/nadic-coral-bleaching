@@ -8,7 +8,9 @@ import { Input } from '@/components/molecules/Input';
 import { Footer } from '@/components/organisms/Footer';
 import { Header } from '@/components/organisms/Header';
 import { Field, Formik } from 'formik';
+import { signIn, useSession } from 'next-auth/react';
 import Image from 'next/image';
+import { ValidationSchema } from './form-validation-schema';
 import {
   FormHeader,
   LoginFormContainer,
@@ -30,6 +32,20 @@ export default function Login() {
     remember: false,
   };
 
+  const { data: session } = useSession();
+
+  async function handleSubmit(values: LoginFormData) {
+    const { email, password } = values;
+
+    signIn('credentials', {
+      email,
+      password,
+      callbackUrl: `/`,
+    });
+  }
+
+  console.log(session?.user);
+
   return (
     <>
       <SEO title='Login' description='SDAasdk' />
@@ -44,12 +60,8 @@ export default function Login() {
 
             <Formik
               initialValues={initialValues}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-                }, 400);
-              }}
+              onSubmit={handleSubmit}
+              validationSchema={ValidationSchema}
             >
               {({ values, errors, isSubmitting, setFieldValue, touched }) => (
                 <StyledForm>

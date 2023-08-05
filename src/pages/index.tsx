@@ -1,14 +1,11 @@
 import { SEO } from '@/components/SEO';
-import { Participating } from '@/components/molecules/Participating';
+import { EventInfo } from '@/components/organisms/EventInfo';
 import { Footer } from '@/components/organisms/Footer';
 import { SignUpForm } from '@/components/organisms/SignUpForm';
-import { Calendar, Clock, MapPin, UsersThree } from '@phosphor-icons/react';
+import { Popularity } from '../components/organisms/Popularity';
 import {
   Description,
-  DetailedInfo,
-  DetailedInfoItem,
   LeftColumn,
-  NumbersContainer,
   StyledContainer,
   Title,
   Wrapper,
@@ -36,32 +33,9 @@ export default function Home() {
               <strong>um tesouro marinho em perigo</strong>.
             </Description>
 
-            <DetailedInfo>
-              <DetailedInfoItem>
-                <UsersThree size={24} color='#3B6AE1' />
-                <span>Qualquer um pode participar</span>
-              </DetailedInfoItem>
+            <EventInfo />
 
-              <DetailedInfoItem>
-                <Clock size={24} color='#3B6AE1' />
-                <span>13:30 ~ 16:30</span>
-              </DetailedInfoItem>
-
-              <DetailedInfoItem>
-                <MapPin size={24} color='#3B6AE1' />
-                <span>Remoto</span>
-              </DetailedInfoItem>
-
-              <DetailedInfoItem>
-                <Calendar size={24} color='#3B6AE1' />
-                <span>13/03/2022</span>
-              </DetailedInfoItem>
-            </DetailedInfo>
-
-            <NumbersContainer>
-              <Participating number='+2.134' title='artigos inscritos' />
-              <Participating number='+343.432' title='pessoas inscritas' />
-            </NumbersContainer>
+            <Popularity />
           </LeftColumn>
 
           <SignUpForm />

@@ -86,31 +86,3 @@ export const Description = styled.p`
     letter-spacing: 0.15px;
   }
 `;
-
-export const DetailedInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-`;
-
-export const DetailedInfoItem = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  > span {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.1px;
-  }
-`;
-
-export const NumbersContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 24px;
-`;

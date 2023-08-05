@@ -1,14 +1,22 @@
 import Reset from '@/styles/reset';
 import theme from '@/styles/theme';
-import { ThemeProvider } from 'styled-components';
+import { Session } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'styled-components';
 
-export default function App({ Component, pageProps }: AppProps) {
+interface MyAppProps extends AppProps {
+  session: Session | null;
+}
+
+export default function App({ Component, pageProps, session }: MyAppProps) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Reset />
-        <Component {...pageProps} />
+        <SessionProvider session={session}>
+          <Reset />
+          <Component {...pageProps} />
+        </SessionProvider>
       </ThemeProvider>
     </>
   );

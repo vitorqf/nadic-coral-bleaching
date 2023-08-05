@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-export const StyledText = styled.p`
+export const StyledText = styled.p<{ $color?: string }>`
   font-size: 14px;
-  color: ${({ theme }) => theme.colors.zinc[500]};
+  color: ${({ theme, $color }) => $color || theme.colors.zinc[500]};
 `;
