@@ -54,14 +54,12 @@ export function SignUpForm() {
         signIn('credentials', {
           email,
           password,
-          // callbackUrl: `${window.location.origin}/login`,
         });
       }
       return;
     } catch (error) {
       console.log(error);
     } finally {
-      console.log('finally');
     }
   }
 

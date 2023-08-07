@@ -1,8 +1,8 @@
 import { SEO } from '@/components/SEO';
 import { EventInfo } from '@/components/organisms/EventInfo';
 import { Footer } from '@/components/organisms/Footer';
+import { Popularity } from '@/components/organisms/Popularity';
 import { SignUpForm } from '@/components/organisms/SignUpForm';
-import { Popularity } from '../components/organisms/Popularity';
 import {
   Description,
   LeftColumn,

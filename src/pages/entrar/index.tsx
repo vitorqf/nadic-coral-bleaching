@@ -3,12 +3,11 @@ import { Button } from '@/components/atoms/Button';
 import { Error } from '@/components/atoms/Error';
 import { H4 } from '@/components/atoms/Headings/h4';
 import { Text } from '@/components/atoms/Text';
-import { Checkbox } from '@/components/molecules/Checkbox';
 import { Input } from '@/components/molecules/Input';
 import { Footer } from '@/components/organisms/Footer';
 import { Header } from '@/components/organisms/Header';
 import { Field, Formik } from 'formik';
-import { signIn, useSession } from 'next-auth/react';
+import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import { ValidationSchema } from './form-validation-schema';
 import {
@@ -22,17 +21,13 @@ import {
 type LoginFormData = {
   email: string;
   password: string;
-  remember: boolean;
 };
 
 export default function Login() {
   const initialValues: LoginFormData = {
     email: '',
     password: '',
-    remember: false,
   };
-
-  const { data: session } = useSession();
 
   async function handleSubmit(values: LoginFormData) {
     const { email, password } = values;
@@ -40,15 +35,15 @@ export default function Login() {
     signIn('credentials', {
       email,
       password,
-      callbackUrl: `/`,
     });
   }
 
-  console.log(session?.user);
-
   return (
     <>
-      <SEO title='Login' description='SDAasdk' />
+      <SEO
+        title='Entre para acessar sua conta '
+        description='Entre em sua conta na plataforma para acessar recursos exclusivos. Entre com suas credenciais e aproveite uma experiência personalizada.'
+      />
       <Header showOnlyLogo center />
       <Wrapper>
         <StyledContainer>
@@ -88,16 +83,6 @@ export default function Login() {
                   {touched.password && errors.password && (
                     <Error message={errors.password} />
                   )}
-
-                  <Field
-                    as={Checkbox}
-                    name='remember'
-                    id='remember'
-                    label='Mantenha-me conectado'
-                    onCheckedChange={() =>
-                      setFieldValue('remember', !values.remember)
-                    }
-                  />
 
                   <Button
                     text='Entrar'

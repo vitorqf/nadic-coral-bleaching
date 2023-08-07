@@ -44,14 +44,14 @@ export const authOptions = {
     }),
   ],
   callbacks: {
-    jwt({ token, user }) {
+    jwt({ token, user }: { token: any; user: any }) {
       if (user) {
         token.role = user.role;
       }
       return token;
     },
 
-    session: async ({ session, token }) => {
+    session: async ({ session, token }: { session: any; token: any }) => {
       if (session?.user) {
         session.user.role = token.role;
       }
@@ -59,7 +59,7 @@ export const authOptions = {
     },
   },
   pages: {
-    signIn: '/login',
+    signIn: '/entrar',
   },
 };
 export default NextAuth(authOptions);

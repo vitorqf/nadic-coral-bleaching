@@ -28,10 +28,12 @@ export const Navigator = styled.nav<{ $hidden?: boolean }>`
   }
 `;
 
-export const NavigatorItem = styled(Link)`
-  color: ${props => props.theme.colors.zinc[500]};
+export const NavigatorItem = styled(Link)<{ $active: boolean }>`
+  color: ${({ $active, theme }) =>
+    $active ? theme.colors.blue[500] : theme.colors.zinc[500]};
 
   &:hover {
-    color: ${props => props.theme.colors.zinc[400]};
+    color: ${({ $active, theme }) =>
+      $active ? theme.colors.blue[400] : theme.colors.zinc[400]};
   }
 `;
