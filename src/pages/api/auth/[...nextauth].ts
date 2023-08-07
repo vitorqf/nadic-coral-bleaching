@@ -1,4 +1,5 @@
 import { prisma } from '@/lib/prisma';
+import bcrypt from 'bcrypt';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
@@ -23,20 +24,16 @@ export const authOptions = {
           where: {
             email: email,
           },
-          select: {
-            email: true,
-            id: true,
-            password: true,
-            name: true,
-            role: true,
-          },
         });
 
         if (!existingUser) {
           throw new Error('No user found for this email');
         }
 
-        const passwordMatch = password === existingUser.password;
+        const passwordMatch = bcrypt.compareSync(
+          password,
+          existingUser.password
+        );
 
         if (!passwordMatch) {
           throw new Error('Invalid password');
@@ -49,7 +46,6 @@ export const authOptions = {
   callbacks: {
     jwt({ token, user }) {
       if (user) {
-        token.id = user.id;
         token.role = user.role;
       }
       return token;
@@ -57,7 +53,6 @@ export const authOptions = {
 
     session: async ({ session, token }) => {
       if (session?.user) {
-        session.user.id = token.id;
         session.user.role = token.role;
       }
       return session;
