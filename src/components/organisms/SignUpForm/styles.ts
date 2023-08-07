@@ -1,4 +1,5 @@
 import { Form } from 'formik';
+import Link from 'next/link';
 import { styled } from 'styled-components';
 
 export const StyledForm = styled(Form)`
@@ -15,5 +16,13 @@ export const StyledForm = styled(Form)`
 
   @media (max-width: 600px) {
     padding: 16px;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${props => props.theme.colors.blue[500]};
+
+  &:hover {
+    text-decoration: underline;
   }
 `;

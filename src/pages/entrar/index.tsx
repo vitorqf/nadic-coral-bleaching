@@ -58,7 +58,7 @@ export default function Login() {
               onSubmit={handleSubmit}
               validationSchema={ValidationSchema}
             >
-              {({ values, errors, isSubmitting, setFieldValue, touched }) => (
+              {({ errors, isSubmitting, touched }) => (
                 <StyledForm>
                   <Field
                     as={Input}

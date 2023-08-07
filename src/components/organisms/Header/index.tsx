@@ -1,5 +1,4 @@
 import { Logged } from '@/components/molecules/Logged';
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { Navigator, NavigatorItem, StyledContainer, Wrapper } from './styles';
 
@@ -10,7 +9,6 @@ interface HeaderProps {
 
 export function Header({ showOnlyLogo = false, center = false }: HeaderProps) {
   const router = useRouter();
-  const { data: session } = useSession();
 
   return (
     <Wrapper>

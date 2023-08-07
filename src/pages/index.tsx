@@ -37,7 +37,6 @@ export default function Home() {
 
             <Popularity />
           </LeftColumn>
-
           <SignUpForm />
         </StyledContainer>
       </Wrapper>

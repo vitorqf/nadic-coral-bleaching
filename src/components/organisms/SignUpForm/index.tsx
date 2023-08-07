@@ -7,7 +7,7 @@ import { Field, Formik } from 'formik';
 import { signIn } from 'next-auth/react';
 import { useState } from 'react';
 import { ValidationSchema } from './form-validation-schema';
-import { StyledForm } from './styles';
+import { StyledForm, StyledLink } from './styles';
 
 type SignUpFormData = {
   fullname: string;
@@ -151,6 +151,10 @@ export function SignUpForm() {
             disabled={isSubmitting}
             isLoading={isSubmitting}
           />
+          <span>
+            Já tem uma conta?{' '}
+            <StyledLink href='/entrar'>Entre agora</StyledLink>
+          </span>
         </StyledForm>
       )}
     </Formik>
