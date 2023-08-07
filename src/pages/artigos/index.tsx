@@ -1,6 +1,6 @@
 import { SEO } from '@/components/SEO';
 import { H5 } from '@/components/atoms/Headings/h5';
-import { ArticleCard } from '@/components/organisms/ArticleCard';
+import { ArticleCard } from '@/components/molecules/ArticleCard';
 import { Footer } from '@/components/organisms/Footer';
 import { Header } from '@/components/organisms/Header';
 import { Grid, StyledContainer, Wrapper } from './styles';

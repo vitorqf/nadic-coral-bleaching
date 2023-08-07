@@ -23,12 +23,14 @@ model User {
 }
 
 model Post {
-  id        String   @id @default(uuid())
-  title     String
-  content   String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  published Boolean  @default(false)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  String?
+  id           String   @id @default(uuid())
+  title        String
+  content      String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  published    Boolean  @default(false)
+  author       User?    @relation(fields: [authorId], references: [id])
+  authorId     String?
+  articleFile  String
+  articleImage String?
 }

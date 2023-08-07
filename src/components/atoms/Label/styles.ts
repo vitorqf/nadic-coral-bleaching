@@ -12,3 +12,7 @@ export const StyledLabel = styled.label`
     font-size: 12px;
   }
 `;
+
+export const Asterisk = styled.span`
+  color: ${({ theme }) => theme.colors.red[500]};
+`;
